@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "babel-loader": "^9.1.2",
+    "wallpaper": "^6.1.1",
+    "webpack": "^5.83.1"
+  },
+  "name": "cross-platform-wallpaper-app",
+  "version": "1.0.0",
+  "description": "way to display wallpapers on Mac from Airtable database",
+  "main": "src/index.cjs",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "rebuild": "electron-rebuild"
+  },  
+  "keywords": [
+    "wallpaper",
+    "app"
+  ],
+  "author": "joelondesign",
+  "license": "ISC",
+  "devDependencies": {
+    "@electron/rebuild": "^3.2.13",
+    "electron": "^24.3.1",
+    "webpack-cli": "^5.1.1"
+  }
+}
