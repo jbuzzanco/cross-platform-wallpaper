@@ -9,13 +9,22 @@
   "name": "cross-platform-wallpaper-app",
   "version": "1.0.0",
   "description": "way to display wallpapers on Mac from Airtable database",
-  "main": "src/index.cjs",
-  "type": "module",
+  "main": "src/index.js",
+  "build": {
+    "appId": "wallpaper.app.joelondesign",
+    "win": {
+      "target": "nsis"
+    },
+    "directories": {
+      "output": "dist"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
+    "build": "electron-builder",
     "rebuild": "electron-rebuild"
-  },  
+  },
   "keywords": [
     "wallpaper",
     "app"
@@ -23,8 +32,9 @@
   "author": "joelondesign",
   "license": "ISC",
   "devDependencies": {
-    "@electron/rebuild": "^3.2.13",
-    "electron": "^24.3.1",
-    "webpack-cli": "^5.1.1"
+    "electron": "^25.0.0",
+    "electron-builder": "^23.6.0",
+    "webpack-cli": "^5.1.1",
+    "webpack-node-externals": "^3.0.0"
   }
 }
