@@ -1,6 +1,8 @@
-const { ipcRenderer } = require('electron');
+const { contextBridge, ipcRenderer } = require('electron');
 
-// Expose the IPC renderer to the window object
-window.electron = {
-  ipcRenderer: ipcRenderer
-};
+// Expose APIs to the renderer process
+contextBridge.exposeInMainWorld('electron', {
+  getAirtableData: () => {
+    return ipcRenderer.invoke('getAirtableData');
+  }
+});

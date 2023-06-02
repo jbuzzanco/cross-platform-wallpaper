@@ -1,4 +1,8 @@
+// q: in console of npm start, I get this error: Cannot find module 'fs'. How do I fix this?
+
+
 const path = require('path');
+const { electron } = require('process');
 
 module.exports = {
   mode: 'development', // Or set to 'production'
@@ -7,13 +11,8 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  target: 'node',
-  externals: {
-    fs: 'commonjs2 fs',
-    electron: 'commonjs2 electron',
-    // Add other modules if needed
-  },
-  // q: where would I add resolve: { fallback: { fs: false } } in this file?
+  target: 'electron-main',
+  externals: ['electron', 'fs'],
   resolve: {
     fallback: {
       fs: false,
